@@ -10,20 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-    .AddFluentValidation(options =>
-    {
-        // Validate child properties and root collection elements
-        options.ImplicitlyValidateChildProperties = true;
-        options.ImplicitlyValidateRootCollectionElements = true;
-
-        // Automatic registration of validators in assembly
-        options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-    });
+builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen( c=>
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CANCUN Hotel", Description = "API for managing Cancun Hotel", Version = "v1" })
+);
 
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddTransient<IValidator<Booking>, BookingValidator>();

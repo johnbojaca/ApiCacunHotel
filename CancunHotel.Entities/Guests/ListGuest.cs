@@ -9,5 +9,10 @@ namespace CancunHotel.Entities.Guests
     public class ListGuest
     {
         public List<Guest> Guests { get; set; }
+
+        public ListGuest()
+        {
+            this.Guests = new List<Guest>();
+        }
     }
 }
