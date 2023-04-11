@@ -27,7 +27,7 @@ namespace CancunHotel.Api.Controllers
         /// <param name="IsActive"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<List<Room>>> GetRooms(int? RoomNumber=null, bool? IsActive=null)
+        public async Task<ActionResult<List<Room>>> GetRooms(int? RoomNumber = null, bool? IsActive = null)
         {
             List<Room> rooms = new List<Room>();
 

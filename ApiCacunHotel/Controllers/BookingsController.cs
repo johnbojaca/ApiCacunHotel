@@ -4,8 +4,8 @@ using CancunHotel.Entities.Bookings;
 using CancunHotel.Entities.Exceptions;
 using CancunHotel.Entities.Guests;
 using FluentValidation;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
 using System.Text;
 
@@ -37,7 +37,7 @@ namespace CancunHotel.Api.Controllers
         /// </summary>
         /// <param name="IdBooking"></param>
         /// <returns></returns>
-        [HttpGet("GetBookingByIdBooking")]
+        [HttpGet("ByIdBooking")]
         public async Task<ActionResult<Entities.Bookings.Booking>> GetBookingByIdBooking(long IdBooking)
         {
             Entities.Bookings.Booking booking = new Entities.Bookings.Booking();
@@ -67,7 +67,7 @@ namespace CancunHotel.Api.Controllers
         /// <param name="IdType"></param>
         /// <param name="Identification"></param>
         /// <returns></returns>
-        [HttpGet("GetBookingByGuestIdentification")]
+        [HttpGet("ByGuestIdentification")]
         public async Task<ActionResult<List<Entities.Bookings.Booking>>> GetBookingByIdentification(int IdType, string Identification)
         {
             List<Entities.Bookings.Booking> bookings = new List<Entities.Bookings.Booking>();
@@ -101,7 +101,7 @@ namespace CancunHotel.Api.Controllers
         /// </summary>
         /// <param name="Booking"></param>
         /// <returns></returns>
-        [HttpPost("InsertBooking")]
+        [HttpPost]
         public async Task<ActionResult<Entities.Bookings.Booking>> InsertBooking([FromBody] Entities.Bookings.Booking Booking)
         {
             Entities.Bookings.Booking booking = new Entities.Bookings.Booking();
@@ -144,7 +144,7 @@ namespace CancunHotel.Api.Controllers
         /// <param name="Booking"></param>
         /// <param name="IdBooking"></param>
         /// <returns></returns>
-        [HttpPut("UpdateBooking")]
+        [HttpPut("Update")]
         public async Task<ActionResult<Entities.Bookings.Booking>> UpdateBooking([FromBody] Entities.Bookings.Booking Booking, long IdBooking)
         {
             Entities.Bookings.Booking booking = new Entities.Bookings.Booking();
@@ -187,7 +187,7 @@ namespace CancunHotel.Api.Controllers
         /// <param name="Guests"></param>
         /// <param name="IdBooking"></param>
         /// <returns></returns>
-        [HttpPut("UpdateGuestsBooking")]
+        [HttpPut("UpdateGuests")]
         public async Task<ActionResult<Entities.Bookings.Booking>> UpdateGuestsBooking([FromBody] ListGuest Guests, long IdBooking)
         {
             Entities.Bookings.Booking booking = new Entities.Bookings.Booking();
@@ -229,7 +229,7 @@ namespace CancunHotel.Api.Controllers
         /// </summary>
         /// <param name="IdBooking"></param>
         /// <returns></returns>
-        [HttpPut("CancelBooking")]
+        [HttpPut("Cancel")]
         public async Task<ActionResult<Entities.Bookings.Booking>> CancelBooking(long IdBooking)
         {
             Entities.Bookings.Booking booking = new Entities.Bookings.Booking();
@@ -261,7 +261,7 @@ namespace CancunHotel.Api.Controllers
         /// </summary>
         /// <param name="IdBooking"></param>
         /// <returns></returns>
-        [HttpGet("GetBookingLogs")]
+        [HttpGet("Logs")]
         public async Task<ActionResult<List<BookingLog>>> GetBookingLogs(long IdBooking)
         {
             List<BookingLog> bookingLogs = new List<BookingLog>();

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacunHotel.Api", "ApiCacunHotel\CacunHotel.Api.csproj", "{C8BC0FE2-21C6-4674-8094-E93B864B972D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacunHotel.Api", "ApiCacunHotel\CacunHotel.Api.csproj", "{C8BC0FE2-21C6-4674-8094-E93B864B972D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.Entities", "CancunHotel.Entities\CancunHotel.Entities.csproj", "{8AA54688-BD27-4962-8B0C-96BDD8178D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancunHotel.Entities", "CancunHotel.Entities\CancunHotel.Entities.csproj", "{8AA54688-BD27-4962-8B0C-96BDD8178D59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.BL", "CancunHotel.BL\CancunHotel.BL.csproj", "{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancunHotel.BL", "CancunHotel.BL\CancunHotel.BL.csproj", "{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.DAL", "CancunHotel.DAL\CancunHotel.DAL.csproj", "{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancunHotel.DAL", "CancunHotel.DAL\CancunHotel.DAL.csproj", "{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.Utility", "CancunHotel.Utility\CancunHotel.Utility.csproj", "{175D0B54-1657-419E-9AD3-DE673D1BFD37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancunHotel.Utility", "CancunHotel.Utility\CancunHotel.Utility.csproj", "{175D0B54-1657-419E-9AD3-DE673D1BFD37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.Test", "CancunHotel.Test\CancunHotel.Test.csproj", "{88C0A6D7-F33B-443C-B02A-E88D7ECDB3EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C0A6D7-F33B-443C-B02A-E88D7ECDB3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C0A6D7-F33B-443C-B02A-E88D7ECDB3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C0A6D7-F33B-443C-B02A-E88D7ECDB3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C0A6D7-F33B-443C-B02A-E88D7ECDB3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

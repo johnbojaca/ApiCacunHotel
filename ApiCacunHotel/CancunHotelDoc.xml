@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CacunHotel.Api</name>
+    </assembly>
+    <members>
+        <member name="T:CancunHotel.Api.Controllers.BookingsController">
+            <summary>
+            Booking Controller
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.#ctor(FluentValidation.IValidator{CancunHotel.Entities.Bookings.Booking},FluentValidation.IValidator{CancunHotel.Entities.Guests.ListGuest})">
+            <summary>
+            Booking Controller Constructor
+            </summary>
+            <param name="bookingValidator"></param>
+            <param name="listGuestValidator"></param>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.GetBookingByIdBooking(System.Int64)">
+            <summary>
+            Get a Booking by IdBooking
+            </summary>
+            <param name="IdBooking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.GetBookingByIdentification(System.Int32,System.String)">
+            <summary>
+            Get Bookings by Identification of Guest
+            </summary>
+            <param name="IdType"></param>
+            <param name="Identification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.InsertBooking(CancunHotel.Entities.Bookings.Booking)">
+            <summary>
+            Insert a Booking
+            </summary>
+            <param name="Booking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.UpdateBooking(CancunHotel.Entities.Bookings.Booking,System.Int64)">
+            <summary>
+            Update a Booking without payment
+            </summary>
+            <param name="Booking"></param>
+            <param name="IdBooking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.UpdateGuestsBooking(CancunHotel.Entities.Guests.ListGuest,System.Int64)">
+            <summary>
+            Update Guest Booking with Payment
+            </summary>
+            <param name="Guests"></param>
+            <param name="IdBooking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.CancelBooking(System.Int64)">
+            <summary>
+            Cancel a Booking
+            </summary>
+            <param name="IdBooking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.BookingsController.GetBookingLogs(System.Int64)">
+            <summary>
+            Get booking logs
+            </summary>
+            <param name="IdBooking"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CancunHotel.Api.Controllers.ParametersController">
+            <summary>
+            Parameters Controller
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.ParametersController.GetGenders">
+            <summary>
+            Get Genders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.ParametersController.GetIdTypes">
+            <summary>
+            Get Identification Types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.ParametersController.GetBookingStates">
+            <summary>
+            Get Booking States
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CancunHotel.Api.Controllers.RoomsController">
+            <summary>
+            Room Controller
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.RoomsController.GetRooms(System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Get rooms
+            </summary>
+            <param name="RoomNumber"></param>
+            <param name="IsActive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.RoomsController.GetAvailableDays(System.Int32)">
+            <summary>
+            Get Available Days the next 30 days
+            </summary>
+            <param name="RoomNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CancunHotel.Api.Controllers.RoomsController.QuoteRoom(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Get quote of room
+            </summary>
+            <param name="RoomNumber"></param>
+            <param name="StarteDate"></param>
+            <param name="FinalDate"></param>
+            <param name="Adults"></param>
+            <param name="Childs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CancunHotel.Api.Models.Errors.ApiError">
+            <summary>
+            ApiError
+            </summary>
+        </member>
+        <member name="P:CancunHotel.Api.Models.Errors.ApiError.StatusCode">
+            <summary>
+            StatusCode
+            </summary>
+        </member>
+        <member name="P:CancunHotel.Api.Models.Errors.ApiError.StatusDescription">
+            <summary>
+            StatusDescription
+            </summary>
+        </member>
+        <member name="P:CancunHotel.Api.Models.Errors.ApiError.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.ApiError.#ctor(System.Int32,System.String)">
+            <summary>
+            ApiError
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.ApiError.#ctor(System.Int32,System.String,System.Object)">
+            <summary>
+            ApiError
+            </summary>
+        </member>
+        <member name="T:CancunHotel.Api.Models.Errors.InternalServerError">
+            <summary>
+            Manejo de errores internos
+            </summary>
+        </member>
+        <member name="P:CancunHotel.Api.Models.Errors.InternalServerError.StatusCode">
+            <summary>
+            StatusCode
+            </summary>
+        </member>
+        <member name="P:CancunHotel.Api.Models.Errors.InternalServerError.StatusCodeModel">
+            <summary>
+            StatusCodeModel
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.InternalServerError.#ctor">
+            <summary>
+            Manejo de errores internos
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.InternalServerError.#ctor(System.Exception,System.String)">
+            <summary>
+            Manejo de errores internos
+            </summary>
+        </member>
+        <member name="T:CancunHotel.Api.Models.Errors.InvalidModelError">
+            <summary>
+            InvalidModelError
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.InvalidModelError.#ctor(System.Object)">
+            <summary>
+            InvalidModelError
+            </summary>
+        </member>
+        <member name="T:CancunHotel.Api.Models.Errors.UnauthorizedError">
+            <summary>
+            UnauthorizedError
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.UnauthorizedError.#ctor">
+            <summary>
+            UnauthorizedError
+            </summary>
+        </member>
+        <member name="M:CancunHotel.Api.Models.Errors.UnauthorizedError.#ctor(System.String)">
+            <summary>
+            UnauthorizedError
+            </summary>
+        </member>
+    </members>
+</doc>

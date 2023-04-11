@@ -1,20 +1,14 @@
 ﻿using CancunHotel.BL;
 using CancunHotel.Entities.Bookings;
 using CancunHotel.Entities.Guests;
-//using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace CancunHote.Api.Controllers
+namespace CancunHotel.Api.Controllers
 {
     /// <summary>
     /// Parameters Controller
     /// </summary>
-    [Route("api/Parameters")]
+    [Route("api/[controller]")]
     [ApiController]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ParametersController : ControllerBase
@@ -23,7 +17,7 @@ namespace CancunHote.Api.Controllers
         /// Get Genders
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetGenders")]
+        [HttpGet("Genders")]
         public async Task<ActionResult<List<Gender>>> GetGenders()
         {
             List<Gender> genders = new List<Gender>();
@@ -50,7 +44,7 @@ namespace CancunHote.Api.Controllers
         /// Get Identification Types
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetIdTypes")]
+        [HttpGet("IdTypes")]
         public async Task<ActionResult<List<IdType>>> GetIdTypes()
         {
             List<IdType> idTypes = new List<IdType>();
@@ -77,7 +71,7 @@ namespace CancunHote.Api.Controllers
         /// Get Booking States
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetBookingStates")]
+        [HttpGet("BookingStates")]
         public async Task<ActionResult<List<BookingStatus>>> GetBookingStates()
         {
             List<BookingStatus> bookingStates = new List<BookingStatus>();
