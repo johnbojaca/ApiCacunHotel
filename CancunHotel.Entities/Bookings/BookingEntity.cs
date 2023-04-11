@@ -12,5 +12,12 @@ namespace CancunHotel.Entities.Bookings
         public DateTime FinalDate { get; set; }
         public decimal Price { get; set; }
         public List<Guest> guests { get; set; }
+
+        public Booking()
+        {
+            this.guests = new List<Guest>();
+            this.IdStatus = new BookingStatus();
+            this.room = new Room();
+        }
     }
 }

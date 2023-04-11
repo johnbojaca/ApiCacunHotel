@@ -11,5 +11,11 @@ namespace CancunHotel.Entities.Bookings
         public int IdStatus { get; set; }
         public string StatusName { get; set; }
         public string Description { get; set; }
+
+        public BookingStatus()
+        {
+            this.StatusName = string.Empty;
+            this.Description = string.Empty;
+        }
     }
 }

@@ -1,9 +1,10 @@
-﻿using CancunHotel.Entities.Rooms;
+﻿using CancunHotel.BL;
+using CancunHotel.Entities.Exceptions;
+using CancunHotel.Entities.Rooms;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-//using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,8 +33,8 @@ namespace CancunHotel.Api.Controllers
 
             try
             {
-                //RoomBL roomBL = new RoomBL();
-                //rooms = await roomBL.GetRooms(RoomNumber, IsActive);
+                RoomBL roomBL = new RoomBL();
+                rooms = await roomBL.GetRooms(RoomNumber, IsActive);
 
                 if (rooms.Count == 0)
                 {
@@ -62,18 +63,18 @@ namespace CancunHotel.Api.Controllers
             {
                 if (RoomNumber <= 0) return BadRequest("Room number should be greater that 0");
 
-                //RoomBL roomBL = new RoomBL();
-                //dates = await roomBL.GetAvailableDays(RoomNumber);
+                RoomBL roomBL = new RoomBL();
+                dates = await roomBL.GetAvailableDays(RoomNumber);
 
                 if (dates.Count == 0)
                 {
                     return StatusCode(StatusCodes.Status204NoContent, $"No results");
                 }
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
@@ -104,18 +105,18 @@ namespace CancunHotel.Api.Controllers
                 if (Adults < 0) error.Append("Room number should be greater or equal that 0 ");
                 if (!string.IsNullOrEmpty(error.ToString())) return BadRequest(error.ToString());
 
-                //RoomBL roomBL = new RoomBL();
-                //price = await roomBL.QuoteRoom(RoomNumber, StarteDate, FinalDate, Adults, Childs);
+                RoomBL roomBL = new RoomBL();
+                price = await roomBL.QuoteRoom(RoomNumber, StarteDate, FinalDate, Adults, Childs);
 
                 if (price == 0)
                 {
                     return StatusCode(StatusCodes.Status204NoContent, $"No results");
                 }
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");

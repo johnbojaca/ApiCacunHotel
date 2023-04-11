@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace CANCUN.Booking.Entities
+namespace CancunHotel.Entities
 {
     public static class Constant
     {

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacunHotel.Api", "ApiCacunH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.Entities", "CancunHotel.Entities\CancunHotel.Entities.csproj", "{8AA54688-BD27-4962-8B0C-96BDD8178D59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.BL", "CancunHotel.BL\CancunHotel.BL.csproj", "{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.DAL", "CancunHotel.DAL\CancunHotel.DAL.csproj", "{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancunHotel.Utility", "CancunHotel.Utility\CancunHotel.Utility.csproj", "{175D0B54-1657-419E-9AD3-DE673D1BFD37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{8AA54688-BD27-4962-8B0C-96BDD8178D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA54688-BD27-4962-8B0C-96BDD8178D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA54688-BD27-4962-8B0C-96BDD8178D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB71B672-B1C0-40CD-9FC1-32FC76D2814D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2448AB1D-4DA1-4896-BEE5-E139A3E0FA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175D0B54-1657-419E-9AD3-DE673D1BFD37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

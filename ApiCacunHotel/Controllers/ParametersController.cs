@@ -1,4 +1,5 @@
-﻿using CancunHotel.Entities.Bookings;
+﻿using CancunHotel.BL;
+using CancunHotel.Entities.Bookings;
 using CancunHotel.Entities.Guests;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -8,12 +9,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CancunHotel.Api.Controllers
+namespace CancunHote.Api.Controllers
 {
     /// <summary>
     /// Parameters Controller
     /// </summary>
-    [Route("api/parameters")]
+    [Route("api/Parameters")]
     [ApiController]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ParametersController : ControllerBase
@@ -29,8 +30,8 @@ namespace CancunHotel.Api.Controllers
 
             try
             {
-                //ParameterBL parametersBL = new ParameterBL();
-                //genders = await parametersBL.GetGenders();
+                ParameterBL parametersBL = new ParameterBL();
+                genders = await parametersBL.GetGenders();
 
                 if (genders.Count == 0)
                 {
@@ -56,8 +57,8 @@ namespace CancunHotel.Api.Controllers
 
             try
             {
-                //ParameterBL parametersBL = new ParameterBL();
-                //idTypes = await parametersBL.GetIdTypes();
+                ParameterBL parametersBL = new ParameterBL();
+                idTypes = await parametersBL.GetIdTypes();
 
                 if (idTypes.Count == 0)
                 {
@@ -83,8 +84,8 @@ namespace CancunHotel.Api.Controllers
 
             try
             {
-                //ParameterBL parametersBL = new ParameterBL();
-                //bookingStates = await parametersBL.GetBookingStates();
+                ParameterBL parametersBL = new ParameterBL();
+                bookingStates = await parametersBL.GetBookingStates();
 
                 if (bookingStates.Count == 0)
                 {

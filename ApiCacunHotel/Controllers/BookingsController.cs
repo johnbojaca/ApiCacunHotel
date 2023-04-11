@@ -1,27 +1,21 @@
-﻿using CancunHotel.Entities.Bookings;
+﻿using CancunHotel.Api.Models.Errors;
+using CancunHotel.BL;
+using CancunHotel.Entities.Bookings;
+using CancunHotel.Entities.Exceptions;
 using CancunHotel.Entities.Guests;
 using FluentValidation;
-//using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Primitives;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CancunHotel.Api.Controllers
 {
     /// <summary>
     /// Booking Controller
     /// </summary>
-    [Route("api/bookings")]
+    [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class BookingsController : ControllerBase
     {
         private IValidator<Booking> _bookingValidator { get; }
@@ -52,8 +46,8 @@ namespace CancunHotel.Api.Controllers
             {
                 if (IdBooking <= 0) return BadRequest("IdBooking parameter should be greater that 0");
 
-                //BookingBL bookingBL = new BookingBL();
-                //booking = await bookingBL.GetBookingByIdBooking(IdBooking);
+                BookingBL bookingBL = new BookingBL();
+                booking = await bookingBL.GetBookingByIdBooking(IdBooking);
 
                 if (booking == null || booking.IdBooking == 0)
                 {
@@ -87,8 +81,8 @@ namespace CancunHotel.Api.Controllers
 
                 if (!string.IsNullOrEmpty(error.ToString())) return BadRequest(error.ToString());
                 
-                //BookingBL bookingBL = new BookingBL();
-                //bookings = await bookingBL.GetBookingByIdentification(IdType, Identification);
+                BookingBL bookingBL = new BookingBL();
+                bookings = await bookingBL.GetBookingByIdentification(IdType, Identification);
 
                 if (bookings.Count == 0)
                 {
@@ -123,19 +117,19 @@ namespace CancunHotel.Api.Controllers
 
                     if (login == null) login = "TEST_CANCUN";
 
-                    //BookingBL bookingBL = new BookingBL();
-                    //booking = await bookingBL.InsertBooking(Booking, login);
+                    BookingBL bookingBL = new BookingBL();
+                    booking = await bookingBL.InsertBooking(Booking, login);
                 }
                 else
                 {
-                    //var errors = validation.Errors?.Select(x => new { x.PropertyName, x.ErrorMessage }).ToList();
-                    //return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
+                    var errors = validation.Errors?.Select(x => new { x.PropertyName, x.ErrorMessage }).ToList();
+                    return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
                 }
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
@@ -166,19 +160,19 @@ namespace CancunHotel.Api.Controllers
 
                     if (login == null) login = "TEST_CANCUN";
 
-                    //BookingBL bookingBL = new BookingBL();
-                    //booking = await bookingBL.UpdateBooking(IdBooking, Booking, login);
+                    BookingBL bookingBL = new BookingBL();
+                    booking = await bookingBL.UpdateBooking(IdBooking, Booking, login);
                 }
                 else
                 {
-                    //var errors = validation.Errors?.Select(x => new { x.PropertyName, x.ErrorMessage }).ToList();
-                    //return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
+                    var errors = validation.Errors?.Select(x => new { x.PropertyName, x.ErrorMessage }).ToList();
+                    return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
                 }
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
@@ -209,19 +203,19 @@ namespace CancunHotel.Api.Controllers
 
                     if (login == null) login = "TEST_CANCUN";
 
-                    //BookingBL bookingBL = new BookingBL();
-                    //booking = await bookingBL.UpdateGuestsBooking(IdBooking, Guests, login);
+                    BookingBL bookingBL = new BookingBL();
+                    booking = await bookingBL.UpdateGuestsBooking(IdBooking, Guests, login);
                 }
                 else
                 {
                     var errors = validation.Errors?.Select(x => new { x.PropertyName, x.ErrorMessage }).ToList();
-                    //return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
+                    return StatusCode(InternalServerError.StatusCodeModel, new InvalidModelError(errors));
                 }
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
@@ -247,13 +241,13 @@ namespace CancunHotel.Api.Controllers
                 
                 if (login == null) login = "TEST_CANCUN";
                 
-                //BookingBL bookingBL = new BookingBL();
-                //booking = await bookingBL.CancelBooking(IdBooking, login);
+                BookingBL bookingBL = new BookingBL();
+                booking = await bookingBL.CancelBooking(IdBooking, login);
             }
-            /*catch (CANCUNBadRequestException ex)
+            catch (CANCUNBadRequestException ex)
             {
                 return BadRequest(ex.Message);
-            }*/
+            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
@@ -274,8 +268,8 @@ namespace CancunHotel.Api.Controllers
 
             try
             {
-                //BookingBL bookingBL = new BookingBL();
-                //bookingLogs = await bookingBL.GetBookingLogs(IdBooking);
+                BookingBL bookingBL = new BookingBL();
+                bookingLogs = await bookingBL.GetBookingLogs(IdBooking);
 
                 if (bookingLogs == null || bookingLogs.Count == 0)
                 {

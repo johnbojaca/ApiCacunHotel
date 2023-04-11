@@ -4,5 +4,10 @@
     {
         public int IdGender { get; set; }
         public string GenderName { get; set; }
+
+        public Gender()
+        {
+            this.GenderName = string.Empty;
+        }
     }
 }
